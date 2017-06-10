@@ -1,0 +1,8 @@
+[Unit]
+Description=DHT Worldwide Service
+After=multi-user.target
+[Service]
+Type=idle
+ExecStart=/bin/bash /home/opi/opi-cold-storage/dht.sh
+[Install]
+WantedBy=multi-user.target
