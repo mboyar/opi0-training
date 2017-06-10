@@ -5,7 +5,7 @@
 #date: 07/03/17 14:31:26
 #contact: muratboyar(at)gmail.com
 
-BASE_DIR="/home/enbia/???/"
+BASE_DIR="/home/enbia/opi0-training/dht-dweet"
 DEV_CODE_FILE="/home/opi/DeviceCode.txt"
 JSON_FILE="/tmp/dht.json"
 
@@ -17,11 +17,13 @@ else
 fi
 
 while((1)); do
-	sensorOut=$($BASE_DIR/dht)
+	sensorOut=$(sudo $BASE_DIR/dht)
 	humid=$(echo $sensorOut | awk -F "|" '{print $1}' | awk -F ":" '{print $2}')
 	temp=$(echo $sensorOut | awk -F "|" '{print $2}' | awk -F ":" '{print $2}')
 
 	dateTime=$(date "+%d.%m.%Y %H:%M:%S")
+
+	echo temp:$temp hum:$humid
 
 	echo "\
 	{ \
