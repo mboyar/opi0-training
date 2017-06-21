@@ -13,3 +13,6 @@ SOURCES += main.cpp \
 HEADERS += \
     opiuart.h
 
+target.path = /home/enbia
+INSTALLS += target
+

@@ -33,7 +33,7 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = opi0-uart1.0.0
-DISTDIR = /home/murat/prj-freelance/pasifler/rflab/eğitim-src/opi0-uart/.tmp/opi0-uart1.0.0
+DISTDIR = /home/murat/prj-freelance/aktifler/rflab/egitim/eğitim-src/opi0-training/qt-uart/.tmp/opi0-uart1.0.0
 LINK          = armv7l-timesys-linux-gnueabihf-g++
 LFLAGS        = -Wl,-rpath,/home/murat/timesys/raspberrypi3/toolchain/lib
 LIBS          = $(SUBLIBS) -L/home/murat/timesys/raspberrypi3/toolchain/lib -lQt5SerialPort -lQt5Core -lpthread 
@@ -484,8 +484,11 @@ moc_opiuart.cpp: /home/murat/timesys/raspberrypi3/toolchain/include/QtCore/QObje
 		/home/murat/timesys/raspberrypi3/toolchain/include/QtCore/qpoint.h \
 		/home/murat/timesys/raspberrypi3/toolchain/include/QtCore/qset.h \
 		/home/murat/timesys/raspberrypi3/toolchain/include/QtCore/qcontiguouscache.h \
+		/home/murat/timesys/raspberrypi3/toolchain/include/QtCore/QTimer \
+		/home/murat/timesys/raspberrypi3/toolchain/include/QtCore/qtimer.h \
+		/home/murat/timesys/raspberrypi3/toolchain/include/QtCore/qbasictimer.h \
 		opiuart.h
-	/home/murat/timesys/raspberrypi3/toolchain/bin/moc $(DEFINES) -I/home/murat/timesys/raspberrypi3/toolchain/lib/qt/mkspecs/linux-timesys-g++ -I/home/murat/prj-freelance/pasifler/rflab/eğitim-src/opi0-uart -I/home/murat/timesys/raspberrypi3/toolchain/include -I/home/murat/timesys/raspberrypi3/toolchain/include/QtSerialPort -I/home/murat/timesys/raspberrypi3/toolchain/include/QtCore -I/my/alpha-slave/factory/build/build_armv7l-timesys-linux-gnueabihf/toolchain/armv7l-timesys-linux-gnueabihf/include/c++/4.9.4 -I/my/alpha-slave/factory/build/build_armv7l-timesys-linux-gnueabihf/toolchain/armv7l-timesys-linux-gnueabihf/include/c++/4.9.4/armv7l-timesys-linux-gnueabihf -I/my/alpha-slave/factory/build/build_armv7l-timesys-linux-gnueabihf/toolchain/armv7l-timesys-linux-gnueabihf/include/c++/4.9.4/backward -I/my/alpha-slave/factory/build/build_armv7l-timesys-linux-gnueabihf/toolchain/lib/gcc/armv7l-timesys-linux-gnueabihf/4.9.4/include -I/my/alpha-slave/factory/build/build_armv7l-timesys-linux-gnueabihf/toolchain/lib/gcc/armv7l-timesys-linux-gnueabihf/4.9.4/include-fixed -I/my/alpha-slave/factory/build/build_armv7l-timesys-linux-gnueabihf/toolchain/armv7l-timesys-linux-gnueabihf/include -I/my/alpha-slave/factory/build/build_armv7l-timesys-linux-gnueabihf/toolchain/usr/include opiuart.h -o moc_opiuart.cpp
+	/home/murat/timesys/raspberrypi3/toolchain/bin/moc $(DEFINES) -I/home/murat/timesys/raspberrypi3/toolchain/lib/qt/mkspecs/linux-timesys-g++ -I/home/murat/prj-freelance/aktifler/rflab/egitim/eğitim-src/opi0-training/qt-uart -I/home/murat/timesys/raspberrypi3/toolchain/include -I/home/murat/timesys/raspberrypi3/toolchain/include/QtSerialPort -I/home/murat/timesys/raspberrypi3/toolchain/include/QtCore -I/my/alpha-slave/factory/build/build_armv7l-timesys-linux-gnueabihf/toolchain/armv7l-timesys-linux-gnueabihf/include/c++/4.9.4 -I/my/alpha-slave/factory/build/build_armv7l-timesys-linux-gnueabihf/toolchain/armv7l-timesys-linux-gnueabihf/include/c++/4.9.4/armv7l-timesys-linux-gnueabihf -I/my/alpha-slave/factory/build/build_armv7l-timesys-linux-gnueabihf/toolchain/armv7l-timesys-linux-gnueabihf/include/c++/4.9.4/backward -I/my/alpha-slave/factory/build/build_armv7l-timesys-linux-gnueabihf/toolchain/lib/gcc/armv7l-timesys-linux-gnueabihf/4.9.4/include -I/my/alpha-slave/factory/build/build_armv7l-timesys-linux-gnueabihf/toolchain/lib/gcc/armv7l-timesys-linux-gnueabihf/4.9.4/include-fixed -I/my/alpha-slave/factory/build/build_armv7l-timesys-linux-gnueabihf/toolchain/armv7l-timesys-linux-gnueabihf/include -I/my/alpha-slave/factory/build/build_armv7l-timesys-linux-gnueabihf/toolchain/usr/include opiuart.h -o moc_opiuart.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
@@ -639,7 +642,10 @@ main.o: main.cpp /home/murat/timesys/raspberrypi3/toolchain/include/QtCore/QCore
 		/home/murat/timesys/raspberrypi3/toolchain/include/QtCore/qvector.h \
 		/home/murat/timesys/raspberrypi3/toolchain/include/QtCore/qpoint.h \
 		/home/murat/timesys/raspberrypi3/toolchain/include/QtCore/qset.h \
-		/home/murat/timesys/raspberrypi3/toolchain/include/QtCore/qcontiguouscache.h
+		/home/murat/timesys/raspberrypi3/toolchain/include/QtCore/qcontiguouscache.h \
+		/home/murat/timesys/raspberrypi3/toolchain/include/QtCore/QTimer \
+		/home/murat/timesys/raspberrypi3/toolchain/include/QtCore/qtimer.h \
+		/home/murat/timesys/raspberrypi3/toolchain/include/QtCore/qbasictimer.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o main.cpp
 
 opiuart.o: opiuart.cpp opiuart.h \
@@ -779,7 +785,10 @@ opiuart.o: opiuart.cpp opiuart.h \
 		/home/murat/timesys/raspberrypi3/toolchain/include/QtCore/qvector.h \
 		/home/murat/timesys/raspberrypi3/toolchain/include/QtCore/qpoint.h \
 		/home/murat/timesys/raspberrypi3/toolchain/include/QtCore/qset.h \
-		/home/murat/timesys/raspberrypi3/toolchain/include/QtCore/qcontiguouscache.h
+		/home/murat/timesys/raspberrypi3/toolchain/include/QtCore/qcontiguouscache.h \
+		/home/murat/timesys/raspberrypi3/toolchain/include/QtCore/QTimer \
+		/home/murat/timesys/raspberrypi3/toolchain/include/QtCore/qtimer.h \
+		/home/murat/timesys/raspberrypi3/toolchain/include/QtCore/qbasictimer.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o opiuart.o opiuart.cpp
 
 moc_opiuart.o: moc_opiuart.cpp 
@@ -787,9 +796,18 @@ moc_opiuart.o: moc_opiuart.cpp
 
 ####### Install
 
-install:  FORCE
+install_target: first FORCE
+	@test -d $(INSTALL_ROOT)/home/enbia || mkdir -p $(INSTALL_ROOT)/home/enbia
+	-$(INSTALL_PROGRAM) $(QMAKE_TARGET) $(INSTALL_ROOT)/home/enbia/$(QMAKE_TARGET)
 
-uninstall:  FORCE
+uninstall_target: FORCE
+	-$(DEL_FILE) $(INSTALL_ROOT)/home/enbia/$(QMAKE_TARGET)
+	-$(DEL_DIR) $(INSTALL_ROOT)/home/enbia/ 
+
+
+install: install_target  FORCE
+
+uninstall: uninstall_target  FORCE
 
 FORCE:
 

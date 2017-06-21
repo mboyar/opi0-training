@@ -6,7 +6,8 @@ int main(int argc, char *argv[])
     QCoreApplication a(argc, argv);
 
     opiUart myInstance;
+    myInstance.start();
 
-    return 0; //a.exec();
+    return a.exec();
 }
 
