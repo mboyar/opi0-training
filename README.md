@@ -1,3 +1,3 @@
 # opi0-training
 
-See Wiki pages (in only TR for a while)
+See Wiki pages (in TR only for a while)
